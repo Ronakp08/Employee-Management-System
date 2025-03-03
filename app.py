@@ -14,7 +14,8 @@ from Attendance.attendance_report import view_attendance_bp
 from admin.leave_approval import approve_leave_bp
 from admin.res_req import approve_resource_bp
 from admin.view_emp_report import emp_rec_bp
-
+from Performance.assign_kpi import assign_kpi_bp
+from Performance.view_kpi import kpi_view_bp
 
 app = Flask(__name__)
 CORS(app)
@@ -47,6 +48,10 @@ app.register_blueprint(approve_leave_bp)
 app.register_blueprint(approve_resource_bp)
 
 app.register_blueprint(emp_rec_bp)
+
+app.register_blueprint(assign_kpi_bp)
+
+app.register_blueprint(kpi_view_bp)
 
 if __name__ == "__main__":
     app.run(debug=True)
